@@ -18,17 +18,20 @@ header {
    grid-area: left;
    /* o top/contain é para a imagem se encaixar no topo e para ficar contida dentro do elemento (div#bg) em que ela está. */
    background: url('/assets/home-bg-img.svg') no-repeat top/contain;
+   /* usamos background-position-x (para o eixo x) que é especificamente para a imagem, se usassemos um margin-left para a div #bg não ficaria no layout objetivado */
+   background-position-x: -10rem;
 }
 
 main {
    grid-area: right;
    display: flex;
    align-items: center;
+   margin-top: -18rem;
 }
 
 main .container {
    /* vai usar sempre o mínimo */
-   width: min(36.3rem 100%);
+   width: min(36.3rem, 100%);
 }
 
 main h2 {
