@@ -1,5 +1,5 @@
 #room.content {
-   max-width: 90%;
+   max-width: min(112rem, 90%);
 }
 
 #room header {
@@ -47,6 +47,7 @@ header .buttons {
    border: .2rem solid var(--grey-blue);
    padding: 1.6rem;
    border-radius: 0 .8rem .8rem .8rem; 
+   margin-bottom: 1.6rem;
 }
 
 #question-form form textarea {
@@ -67,7 +68,8 @@ header .buttons {
    justify-content: space-between;
 } 
 
-#question-form form footer div {
+/* apenas divs filhas diretas de footer. Obs: é apenas uma garantia para o css, pois se no futuro precisarmos colocar divs dentro da div filha direta de footer, não teremos erros no css */
+#question-form form footer > div {
    display: flex;
    color: var(--iconsAnddetails);
    font-family: 'Poppins', sans-serif;
@@ -75,3 +77,67 @@ header .buttons {
    font-size: 1.4rem;
    align-items: center;
 }
+
+#question-form form footer > div img {
+   margin-right: 0.9rem;
+}
+
+#question-form form footer button {
+   height: auto;
+   padding: .8rem 2.4rem;
+   line-height: 2.4rem;
+}
+
+/*** QUESTIONS ***/
+.question-wrapper {
+   background: var(--light-blue);
+   margin-bottom: .8rem;
+   border-radius: 0 .8rem .8rem .8rem;
+   padding: 2.4rem;
+}
+
+/* blocos de perguntas marcados como lidos pelo usuário */
+.question-wrapper.read {
+   background: var(--grey-medium);
+}
+
+.question-wrapper.read .user {
+   background: var(--grey-blue);
+}
+/*  */
+
+.question-content {
+   display: flex;
+   align-items: center;
+}
+
+.question-content .user {
+   background: var(--blue);
+   clip-path: circle(); 
+   padding: 1.4rem;
+}
+
+.question-content .question p {
+   margin-left: 1.6rem;
+} 
+
+.actions {
+   display: flex;
+   align-items: center;
+   justify-content: flex-end;
+}
+
+.actions > a {
+   display: flex;
+   align-items: center;
+}
+
+.actions > a > img {
+   margin-right: .8rem;
+}
+
+/* sibling, irmão da primeira tag  a  dentro de .actions */
+.actions > a + a {
+   margin-left: 2.4rem;
+}
+

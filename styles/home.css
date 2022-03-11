@@ -67,6 +67,12 @@ main h2 {
    margin-bottom: 2.4rem;
 }
 
+/* esse abaixo é apenas para o form do create-pass.html */
+.form-create-pass {
+   margin-bottom: 15rem;
+}
+/*  */
+
 main .container .separator {
    display: flex;
    margin: 4rem 0;
