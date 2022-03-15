@@ -1,0 +1,149 @@
+#room.content {
+   max-width: min(112rem, 90%);
+}
+
+#room header {
+   width: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+}
+
+header .buttons {
+   display: flex;
+}
+
+#room header .buttons .button img {
+   width: 2rem;
+   height: 2rem;
+}
+
+#room header .buttons .button img:nth-child(1) {
+   margin-left: 1rem;
+}
+
+/* para o primeiro .button */
+#room header .buttons .button:nth-child(1) {
+   margin-right: .8rem;
+   padding: 1.3rem 1.6rem;
+}
+
+#room header .buttons .button:nth-child(2) {
+   padding: 1.3rem 3.2rem;
+}
+
+#room header .buttons .button img:nth-child(2) {
+   margin-right: 1rem;
+}
+
+/*** QUESTION FORM ***/
+#question-form h2 {
+   font: 700 2.8rem/4.2rem 'Poppins', sans-serif;
+   margin-bottom: 2.4rem;
+   color: var(--black); 
+}
+
+#question-form form {
+   border: .2rem solid var(--grey-blue);
+   padding: 1.6rem;
+   border-radius: 0 .8rem .8rem .8rem; 
+   margin-bottom: 1.6rem;
+}
+
+#question-form form textarea {
+   resize: none;
+   background: transparent;
+   outline: none;
+   width: 100%;
+}
+
+/* para estilizar o placeholder */
+#question-form form textarea::placeholder {
+   color: var(--grey-blue);
+}
+
+#question-form form footer {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+} 
+
+/* apenas divs filhas diretas de footer. Obs: é apenas uma garantia para o css, pois se no futuro precisarmos colocar divs dentro da div filha direta de footer, não teremos erros no css */
+#question-form form footer > div {
+   display: flex;
+   color: var(--iconsAnddetails);
+   font-family: 'Poppins', sans-serif;
+   font-weight: 400;
+   font-size: 1.4rem;
+   align-items: center;
+}
+
+#question-form form footer > div img {
+   margin-right: 0.9rem;
+}
+
+#question-form form footer button {
+   height: auto;
+   padding: .8rem 2.4rem;
+   line-height: 2.4rem;
+}
+
+/*** QUESTIONS ***/
+.question-wrapper {
+   background: var(--light-blue);
+   margin-bottom: .8rem;
+   border-radius: 0 .8rem .8rem .8rem;
+   padding: 2.4rem;
+}
+
+/* blocos de perguntas marcados como lidos pelo usuário */
+.question-wrapper.read {
+   background: var(--grey-medium);
+}
+
+.question-wrapper.read .user {
+   background: var(--grey-blue);
+}
+/*  */
+
+.question-content {
+   display: flex;
+   align-items: flex-start;
+}
+
+.question-content .user {
+   background: var(--blue);
+   clip-path: circle(); 
+   padding: 1.4rem;
+}
+
+.question-content .question p {
+   margin-left: 1.6rem;
+   /* quando uma palavra (não frase) é muito grande, não deixa o layout quebrar, raro de ocorrer, mas apenas por precaução */
+   word-break: break-word;
+   /* aumentamos a altura para esse elemento (colocando do tamanho do avatar), para que possamos ver a diferença no display:flex e no align-items:center */
+   min-height: 5.5rem;
+   display: flex;
+   align-items: center;
+} 
+
+.actions {
+   display: flex;
+   align-items: center;
+   justify-content: flex-end;
+}
+
+.actions > a {
+   display: flex;
+   align-items: center;
+}
+
+.actions > a > img {
+   margin-right: .8rem;
+}
+
+/* sibling, irmão da primeira tag  a  dentro de .actions */
+.actions > a + a {
+   margin-left: 2.4rem;
+}
+

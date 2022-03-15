@@ -1,0 +1,110 @@
+.content {
+   display: grid;
+   /* setamos para duas colunas, 60% de largura para a primeira e 40% de largura para a segunda. */
+   grid-template-columns: 60% 40%;
+   /* setando a altura das fileiras, 11.4rem para a primeira (que será o header) e 1fr para todo o restante da tela (que será o main). */
+   grid-template-rows: 11.4rem 1fr;
+   grid-template-areas: 
+   'header header'
+   'left right'
+}
+
+/* colocando os elementos nas posições do grid-template-areas acima */
+header {
+   grid-area: header;
+}
+
+/* Na div #bg usamos para a imagem principal, já nas divs dentro dela, usamos para as 2 bolas que tem (uma no canto direito do topo da tela, e outra no canto direito do fundo da tela) */
+
+/* main image */
+#bg {
+   grid-area: left;
+   /* o top/contain é para a imagem se encaixar no topo e para ficar contida dentro do elemento (div#bg) em que ela está. */
+   background: url('/images/home-bg-img.svg') no-repeat top / contain;
+   /* usamos background-position-x (para o eixo x) que é especificamente para a imagem, se usassemos um margin-left para a div #bg não ficaria no layout objetivado */
+   background-position-x: -10rem;
+   background-position-y: -1rem;
+}
+
+/* balls */
+.ball {
+   background: var(--blue);
+   position: fixed;
+   clip-path: circle();
+   opacity: 0.1;
+}
+
+.ball.top {
+   width: 63.3rem;
+   height: 63.3rem;
+   top: -38.5rem;
+   right: -40.4rem;
+}
+
+.ball.bottom {
+   right: 5.6rem;
+   width: 21.2rem;
+   height: 21.2rem;
+   bottom: -14.8rem;
+}
+
+main {
+   grid-area: right;
+   display: flex;
+   align-items: center;
+   margin-top: -18rem;
+}
+
+main .container {
+   /* vai usar sempre o mínimo */
+   width: min(36.3rem, 100%);
+}
+
+main h2 {
+   font-family: 'Poppins', sans-serif;
+   color: var(--black);
+   font-size: clamp(20px, 5vw, 2.8rem);
+   margin-bottom: 2.4rem;
+}
+
+/* esse abaixo é apenas para o form do create-pass.html */
+.form-create-pass {
+   margin-bottom: 15rem;
+}
+/*  */
+
+main .container .separator {
+   display: flex;
+   margin: 4rem 0;
+   align-items: center;
+   color: var(--grey-blue);
+   font-weight: 400;
+   font-family: 'Poppins', sans-serif;
+}
+
+main .container .separator div:nth-child(2) {
+   /* para não dar erro de quebra */
+   line-height: 0;
+   padding: 0 1.35rem;
+}
+
+main .container .separator div:nth-child(1),
+main .container .separator div:nth-child(3) {
+   width: 42%;
+   height: 1px;
+   background: var(--grey-blue);
+}
+
+input {
+   border: var(--grey-dark) .2rem solid;
+   padding: 0 1.6rem;
+   outline: none;
+}
+
+input, button, .button {
+   width: 100%;
+   margin-bottom: 1.8rem;
+}
+
+
+

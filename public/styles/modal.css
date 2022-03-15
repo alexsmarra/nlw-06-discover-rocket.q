@@ -1,0 +1,77 @@
+.modal-wrapper.active {
+   visibility: visible;
+   opacity: 1;
+}
+
+.modal-wrapper {
+   position: fixed;
+   width: 100vw;
+   height: 100vh;
+   /* left e top 0 para garantir que o modal não saia da tela quando for ativado  */
+   left: 0;
+   top: 0;
+   /* nesse caso, a opacity tem que ser colocada no rgba, pois se colocada separada pode dar problemas */
+   background: rgba(4, 9, 17, .8);
+   /* opacity: 0.8; */
+   display: flex; 
+   /* visibility e opacity para garantir que o modal não apareça sem ser chamado, já que alguns navegadores não aceitam visibility ou opacity. O display:none não é bem vindo pq ele faz com que o elemento não exista */
+   visibility: hidden;
+   opacity: 0;
+}
+
+.modal-wrapper .modal {
+   /* para responsividade, usamos o min */
+   width: min(59rem, 90%);
+   height: 36.2rem;
+   background: var(--white);
+   /* margin auto já deixa centralizado */
+   margin: auto; 
+   border-radius: .8rem;
+   font-family: 'Poppins';
+   text-align: center;
+   padding: 6.4rem;
+}
+
+.modal-wrapper .modal h2 {
+   margin-bottom: 1.2rem;
+   font-size: 2.4rem;
+   font-weight: 700;
+   color: var(--black);
+}
+
+.modal-wrapper .modal p {
+   margin-bottom: 2.4rem;
+   color: var(--grey-dark);
+}
+
+.modal-wrapper .modal form {
+   /* display: flex;
+   flex-direction: column;
+   align-items: center; */
+}
+
+.modal-wrapper .modal form input {
+   border: solid .2rem var(--blue);
+   border-radius: .8rem;
+   width: min(70%, 30.2rem);
+   padding: 1.3rem 1.6rem;
+   margin-bottom: 4rem;
+   /* outline: none; */
+}
+
+.modal-wrapper .modal form .buttons {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.modal-wrapper .modal form .buttons div {
+   margin-right: .8rem;
+}
+
+.modal-wrapper .modal form .buttons div,
+.modal-wrapper .modal form .buttons button {
+   padding: 1.3rem 3.2rem;
+}
+
+
