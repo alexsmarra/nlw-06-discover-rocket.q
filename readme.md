@@ -14,6 +14,8 @@ A pasta  public  é para tudo que pode ser acessado do projeto todo.
 "main": "src/server.js",
 Instalamos o  nodemon  que é o nosso live reload, com o cmd  npm install nodemon -D   para instalar como uma ferramenta apenas para desenvolvimento, e depois no package.json na parte de  "start": "node src/server.js"  colocamos  "start": "nodemon ." (o  .  já faz referência ao main, que é o nosso  server.js que colocaremos no main logo em seguida)  e no  "main": "index.js"  colocamos  "main": "src/server.js"  para a renderização ser simultânea com o código na medida que for sendo alterado e salvo. 
 
+Mais na frente no projeto, o sqlite, para uso de banco de dados. Usamos o cmd  npm install sqlite  e o cmd  npm install sqlite3
+
 /////
 Se não der para atualizar o npm, no terminal, digite o cmd   sudo chown -R $(whoami) $(npm config get prefix)/{lib/node_modules,bin,share}   
 
