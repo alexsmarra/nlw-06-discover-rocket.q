@@ -1,5 +1,5 @@
 {
-  "name": "rocketq",
+  "name": "rocketQ",
   "version": "1.0.0",
   "description": "Projeto desenvolvido para gerar perguntas anônimas de usuários direcionadas ao dono da página. Projeto desenvolvido na semana NLW Rocketseat na missão discover",
   "main": "src/server.js",
@@ -7,7 +7,7 @@
     "start": "nodemon ."
   },
   "keywords": [],
-  "author": "",
+  "author": "Alexandre Simões Marra",
   "license": "ISC",
   "dependencies": {
     "ejs": "^3.1.6",
@@ -17,6 +17,3 @@
     "nodemon": "^2.0.15"
   }
 }
-
-
-

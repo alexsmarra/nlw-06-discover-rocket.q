@@ -3,7 +3,7 @@ const express = require('express')
 // o  server.js  não reconhece a existência do  route.js, por isso a linha abaixo é necessária para importar a pasta route.js
 const route = require('./route')
 // importando o módulo  path, para o  server.set('views, path.join..)  mais abaixo
-const path = require('path')
+ const path = require('path')
 
 const server = express()
 
