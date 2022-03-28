@@ -16,9 +16,6 @@ server.use(express.static('public'))
 // como a pasta  views  não está solto na pasta src, mas dentro de views que está dentro de src, temos que mostrar ao express aonde ela está. O  path  é o caminho em nosso pc até o projeto rocketq (/Users/alexandremarra/Programacao/Rocketseat/Discover/NLW6/rocketQ), o  __dirname  da pasta aonde estamos (server.js) é  src/  , o  join  irá juntar  o o  src  com o  views    
 server.set('views', path.join(__dirname, 'views'))
 
-// para o QuestionController.js, fazendo a intermediação com o route.js (na parte que chama o QuestionController ) 
-server.use(express.urlencoded({ extended:true }))
-
 // dizendo para o node utilizar a arquivo  route.js
 server.use(route)
 
