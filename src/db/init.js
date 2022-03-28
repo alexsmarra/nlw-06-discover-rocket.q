@@ -5,7 +5,7 @@ const Database = require("./config");
 const initDb = {
    async init() {
       // é necessário o  async await  pq o Database() (nosso arquivo de configuração ) é mais lento do que o  db.exec(), e precisamos dos dados do  Database()  antes de executarmos o  db.exec()
-      const db = await Database()
+      const db = await Database();
 
       // aqui dentro de  db.exec(``)  digitaremos códigos sql
       await db.exec(
@@ -15,7 +15,7 @@ const initDb = {
          `CREATE TABLE rooms (
          id INTEGER PRIMARY KEY, 
          pass TEXT)`
-      )
+      );
 
       await db.exec(
          // tabela para as questões
@@ -23,13 +23,12 @@ const initDb = {
          // check INT  é: se for 1 estará checkado, se for 0 não estará checkado
          `CREATE TABLE questions (
          id INTEGER PRIMARY KEY AUTOINCREMENT,
-         title TEXT,
-         read INT,
-         room INT)`
-      )
+         titulo TEXT,
+         read INT)`
+      );
 
-      await db.close()
+      await db.close();
    },
 };
 
-initDb.init()
+initDb.init();
