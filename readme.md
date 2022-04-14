@@ -12,6 +12,7 @@ Criamos uma rota para dar caminhos à URL, no arquivo  route.js  .
 A pasta  public  é para tudo que pode ser acessado do projeto todo.
 
 "main": "src/server.js",
-Instalamos o  nodemon  que é o nosso live reload, com o cmd  npm install nodemon -D   para instalar como uma ferramenta apenas para desenvolvimento, e depois no package.json na parte de  "start": "node src/server.js"  colocamos  "start": "nodemon ." (o  .  já faz referência ao main, que é o nosso  server.js que colocaremos no main logo em seguida)  e no  "main": "index.js"  colocamos  "main": "src/server.js"  para a renderização ser simultânea com o código na medida que for sendo alterado e salvo
+Instalamos o  nodemon  que é o nosso live reload, para a renderização ser simultânea com o código na medida que for sendo alterado e salvo, usamos o cmd  npm install nodemon -D   para instalar como uma ferramenta apenas para desenvolvimento, e depois no package.json na parte de  "start": "node src/server.js"  colocamos  "start": "nodemon ."  , o  .  já faz referência ao main, que é o nosso  src/server.js que colocamos no "main"  (no "main": "index.js"  colocamos  "main": "src/server.js").
 
+Para banco de dados instalamos o sqlite e o sqlite3, com os cmd  npm install sqlite  e  npm install sqlite3
 

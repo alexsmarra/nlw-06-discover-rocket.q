@@ -1,9 +1,9 @@
 // importando o express
 const express = require('express')
-// o  server.js  não reconhece a existência do  route.js, por isso a linha abaixo é necessária para importar a pasta route.js
+// o  server.js  não reconhece a existência do  route.js, por isso a linha abaixo é necessária para importar o arquivo route.js
 const route = require('./route')
 // importando o módulo  path, para o  server.set('views, path.join..)  mais abaixo
- const path = require('path')
+const path = require('path')
 
 const server = express()
 
@@ -13,8 +13,11 @@ server.set('view engine', 'ejs')
 // para a pasta  public, que fará renderizar todo o css que colocamos dentro dela.
 server.use(express.static('public'))
 
-// como a pasta  views  não está solto na pasta src, mas dentro de views que está dentro de src, temos que mostrar ao express aonde ela está. O  path  é o caminho em nosso pc até o projeto rocketq (/Users/alexandremarra/Programacao/Rocketseat/Discover/NLW6/rocketQ), o  __dirname  da pasta aonde estamos (server.js) é  src/  , o  join  irá juntar  o o  src  com o  views    
+// O  path  é o caminho em nosso pc até o projeto rocketq (/Users/alexandremarra/Programacao/Rocketseat/Discover/NLW6/rocketQ), o  __dirname  será sempre da pasta mais próxima aonde estamos (server.js), que no caso é  src/  (pois ele está dentro de  src/)  , o  join  irá juntar o  src/  com a pasta  views    
 server.set('views', path.join(__dirname, 'views'))
+
+// middleware para renderizar os posts (funcionalidades dos nossos posts, que fará a intermediação entre a rota e o  QuestionController.js  por exemplo)
+server.use(express.urlencoded({extended: true}))
 
 // dizendo para o node utilizar a arquivo  route.js
 server.use(route)
