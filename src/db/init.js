@@ -1,4 +1,5 @@
 // esse arquivo não fará parte do projeto, apenas rodamos ele antes para criar as tabelas do nosso bd
+
 const Database = require('./config')
 
 const initDb = {
@@ -15,12 +16,15 @@ const initDb = {
       )`);
 
       // AUTOINCREMENT é para ir dando número automaticamente para cada item
-      // INT é para número tb (creio que seja para número inteiro), no caso, se  check for 1 estará checkado, se for 0 não estará checkado
+      // INT é para número tb (creio que seja para número inteiro), no caso, se  read  for 1 estará lido, se for 0 não estará lido
       await db.exec(`CREATE TABLE questions (
          id INTEGER PRIMARY KEY AUTOINCREMENT,
-         titulo TEXT,
-         check INT
+         title TEXT,
+         read INT,
+         room INT
       )`);
+
+      await db.run(``)
 
       // fechando o banco de dados (bd)
       await db.close()

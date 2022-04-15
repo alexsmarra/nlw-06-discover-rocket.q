@@ -10,8 +10,10 @@ const route = express.Router()
 route.get('/', (req, res) => res.render("index", {page: 'enter-room'}))
 
 route.get('/create-pass', (req, res) => res.render('index', {page: 'create-pass'}))
-route.get('/room/:room', (req, res) => res.render('room'))
+// o :room é a forma de receber variáveis, sempre que tiver :algumacoisa é uma forma de receber variáveis para encaixar na url
+route.get('/room/:room', RoomController.open)
 
+route.post('/question/create/:room', QuestionController.create)
 // para o post do form do modal
 route.post('/question/:room/:question/:action', QuestionController.index)
 
