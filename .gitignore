@@ -1,0 +1,4 @@
+/node_modules
+src/db/rocketq.sqlite
+.DS-STORE
+readme.md

@@ -1,13 +1,15 @@
 const Database = require('../db/config')
 
 module.exports = {
+   // para gerar número de id da sala, pegar ele, o password (código digitado pelo usuário) e enviar para o banco de dados
    async create(req, res) {
       const db = await Database()
+      // pegando o password (código da sala) digitado pelo usuário
       const pass = req.body.password
       let isRoom = true 
       let roomId
 
-   // Enquanto  isRoom  for true, ele vai criar o número da sala, vai rodar esse trecho do código, quando for  false , ele inseri no bd.
+   // Enquanto  isRoom  for true, ele vai criar o número da sala, vai rodar esse trecho do código, quando for  false , ele inseri no bd, se der true, ele recomeça (não pode ter número de id's iguais)
       while(isRoom) {
          // criando número de 6 algarismo, fizemos uma condição para concatenação (gerando o número da sala)
          for(var i = 0; i < 6; i++) {
@@ -37,8 +39,35 @@ module.exports = {
       res.redirect(`/room/${roomId}`)
    },
    
-   open(req, res) {
+   async open(req, res) {
+      const db = await Database()
+      // pegando o parâmetro gerado dentro da própria url de /room/:room (o  :room)
       const roomId = req.params.room
-      res.render('room', {roomId: roomId})
+      
+      // Buscando na tabela  questions  apenas as questões (não lidas, read = 0) da sala que queremos, do  roomId  do momento. Na sintaxe para banco de dados, o sinal de "=" não significa "recebe", mas "igual" mesmo
+      const questions = await db.all(`SELECT * FROM questions WHERE room = ${roomId} and read = 0`)
+
+      // buscando as perguntas como acima, mas apenas as já lidas (read = 1). 
+      const questionsRead = await db.all(`SELECT * FROM questions WHERE room = ${roomId} and read = 1`)
+
+      // forma de dar nome à variáveis que terá como valor um tipo boolean (isRoom, isBlack, isWhite..)
+      let isNoQuestions
+      // condição para ver se não tem questões na sala
+      if(questions.length == 0) {
+         if(questionsRead.length == 0) {
+            isNoQuestions = true
+         }
+      }
+      
+      // entre chaves é a forma de enviar as variáveis criadas acima para o room.ejs (faremos um if antes de começar o forEach das questões)
+      res.render('room', {roomId: roomId, questions: questions, questionsRead: questionsRead, isNoQuestions: isNoQuestions})
+
+   },
+   // para quando o usuário digitar o código da sala no formulário da página inicial, fazendo com que ele entre em uma sala já existente.
+   enter(req, res) {
+      // pegando o número digitado pelo usuário 
+      const roomId = req.body.roomId
+
+      res.redirect(`/room/${roomId}`)
    }
 }
