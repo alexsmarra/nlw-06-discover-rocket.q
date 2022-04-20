@@ -1,4 +1,4 @@
-<strong style:"color:red">Technologies</strong> <br>
+<strong>Technologies</strong> <br>
 This project was developed with the following technologies: 
 HTML,
 CSS,
@@ -22,10 +22,12 @@ JavaScript,
 NodeJS,
 EJS,
 Express e
-SQLite.
+SQLite. <br>
 <br>
+
 <strong>Projeto</strong> <br>
 O Rocket.Q foi realizado em aula na Rocketseat, uma aplicação de interação através de perguntas, sendo possível criar uma sala para internautas anônimos fazerem perguntas. O criador da sala em posse de uma senha poderá gerenciar essas perguntas, podendo marcá-las como lidas, assim como excluí-las.
+<br>
 
 <strong>Layout</strong> <br>
 Você pode visualizar o layout do projeto através desse <a href="https://www.figma.com/file/6APCAT6NlSxbRUjYuBC2Ng/Roquet.q-(Community)?node-id=0%3A1" target="_blank">link</a> pelo Figma. 
