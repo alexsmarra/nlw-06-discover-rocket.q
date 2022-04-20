@@ -11,7 +11,7 @@ SQLite.
 <strong>Project</strong> <br>
 The project Rocket.Q was carried out in class at Rocketseat, an interaction application through questions, being possible to create a room for anonymous internet users to ask questions. The room creator in possession of a password  will be able to manage these questions, mark them as read, as well as delete them.
 
-strong>Layout</strong> <br>
+<strong>Layout</strong> <br>
 You can view the layout of the project through this <a href="https://www.figma.com/file/6APCAT6NlSxbRUjYuBC2Ng/Roquet.q-(Community)?node-id=0%3A1" target="_blank">link</a> in Figma. 
 <hr>
 <strong>Tecnologias</strong> <br>
