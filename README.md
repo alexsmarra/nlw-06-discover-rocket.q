@@ -24,6 +24,7 @@ EJS,
 Express e
 SQLite.
 
+
 <strong>Projeto</strong> <br>
 O Rocket.Q foi realizado em aula na Rocketseat, uma aplicação de interação através de perguntas, sendo possível criar uma sala para internautas anônimos fazerem perguntas. O criador da sala em posse de uma senha poderá gerenciar essas perguntas, podendo marcá-las como lidas, assim como excluí-las.
 
