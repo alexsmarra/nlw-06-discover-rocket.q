@@ -7,6 +7,7 @@ NodeJS,
 EJS,
 Express e
 SQLite.
+
 <strong>Project</strong> <br>
 The project Rocket.Q was carried out in class at Rocketseat, an interaction application through questions, being possible to create a room for anonymous internet users to ask questions. The room creator in possession of a password  will be able to manage these questions, mark them as read, as well as delete them.
 
