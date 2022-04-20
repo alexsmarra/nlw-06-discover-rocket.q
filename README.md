@@ -1,4 +1,4 @@
-<strong color:"red">Technologies</strong> <br>
+<strong style:"color:red">Technologies</strong> <br>
 This project was developed with the following technologies: 
 HTML,
 CSS,
