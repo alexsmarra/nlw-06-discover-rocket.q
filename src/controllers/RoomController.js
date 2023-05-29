@@ -29,12 +29,14 @@ module.exports = {
             await db.run(`INSERT INTO rooms (
                id,
                pass
-            )VALUES(
+            ) VALUES (
                ${parseInt(roomId)},
                "${pass}"
             )`)
          }
       }
+
+      await db.close()
       // redirecionando o endereço 
       res.redirect(`/room/${roomId}`)
    },
